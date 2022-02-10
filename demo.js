@@ -9,7 +9,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT name, address FROM customers WHERE name LIKE 'V%' ", function (err, result, fields) {
+  con.query("SELECT * FROM customers ORDER BY name DESC", function (err, result, fields) {
     if (err) throw err;
     console.log(result);
   });
